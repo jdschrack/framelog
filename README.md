@@ -1,6 +1,7 @@
 <h1>FrameLog</h1>
-##A free logging library for Entity Framework
-###Created By: Martin Eden (https://bitbucket.org/MartinEden/)
+<h2 style="margin-top: 0px; margin-bottom: 10px;">A free logging library for Entity Framework</h2>
+<h3>Created By: Martin Eden</h3>
+(https://bitbucket.org/MartinEden/)
 
 FrameLog can log every change made to every model property in your EntityFramework model. It logs the new value, who made the change, and when it happened. You can query the low-level logging tables directly, or you can use the provided HistoryExplorer to examine the logs in a high-level, strongly-typed manner.
 
