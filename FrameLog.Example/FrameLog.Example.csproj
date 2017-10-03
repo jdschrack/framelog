@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D842D620-5768-486A-8882-3589CB360AEB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FrameLog.Example</RootNamespace>
+    <AssemblyName>FrameLog.Example</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release-Net451|AnyCPU'">
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release-Net451\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-Net451|AnyCPU'">
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug-Net451\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)'=='Debug' Or '$(Configuration)'=='Release'">
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)'=='Debug-Net451' Or '$(Configuration)'=='Release-Net451'">
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)'=='Debug-Net451' Or '$(Configuration)'=='Release-Net451'">
+    <Compile Include="ExampleContextAsync.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExampleContext.cs" />
+    <Compile Include="ExampleContextAdapter.cs" />
+    <Compile Include="Models\BookType.cs" />
+    <Compile Include="Models\BookGenre.cs" />
+    <Compile Include="Models\Bookshelf.cs" />
+    <Compile Include="Models\ModelWithPrimitiveKey.cs" />
+    <Compile Include="Models\ModelWithComplexKey.cs" />
+    <Compile Include="Models\Format.cs" />
+    <Compile Include="ExampleContextInitializer.cs" />
+    <Compile Include="Models\Style.cs" />
+    <Compile Include="Models\Testing\ClassWithProtectedProperty.cs" />
+    <Compile Include="Models\Testing\ClassWithSomeExcludedProperties.cs" />
+    <Compile Include="Models\ModelWithConcurrency.cs" />
+    <Compile Include="Models\ModelWithValidation.cs" />
+    <Compile Include="Models\ChangeSet.cs" />
+    <Compile Include="Models\ChangeSetFactory.cs" />
+    <Compile Include="Models\ModelWithDynamicProxy.cs" />
+    <Compile Include="Models\ObjectChange.cs" />
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\PropertyChange.cs" />
+    <Compile Include="Models\Publisher.cs" />
+    <Compile Include="Models\Testing\ClassWithSomeIncludedProperties.cs" />
+    <Compile Include="Models\Testing\ClassWithAbstractedCollection.cs" />
+    <Compile Include="Models\Testing\VanillaTestClass.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Testing\ClassWithDoNotLog.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FrameLog\FrameLog.csproj">
+      <Project>{DC274648-2C27-4635-98A1-3101FC829057}</Project>
+      <Name>FrameLog</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

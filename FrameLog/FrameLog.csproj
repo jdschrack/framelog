@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC274648-2C27-4635-98A1-3101FC829057}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FrameLog</RootNamespace>
+    <AssemblyName>FrameLog</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug-Net451|AnyCPU'">
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug-Net451\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release-Net451|AnyCPU'">
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release-Net451\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)'=='Debug' Or '$(Configuration)'=='Release'">
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)'=='Debug-Net451' Or '$(Configuration)'=='Release-Net451'">
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)'=='Debug-Net451' Or '$(Configuration)'=='Release-Net451'">
+    <Compile Include="Contexts\DbContextAdapterAsync.cs" />
+    <Compile Include="Contexts\ObjectContextAdapterAsync.cs" />
+    <Compile Include="Contexts\IFrameLogContextAsync.cs" />
+    <Compile Include="FrameLogModuleAsync.cs" />
+    <Compile Include="Transactions\NullTransactionProviderAsync.cs" />
+    <Compile Include="Transactions\TransactionScopeProviderAsync.cs" />
+    <Compile Include="Transactions\ITransactionProviderAsync.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Exceptions\ChangesNotDetectedException.cs" />
+    <Compile Include="Exceptions\InvalidFrameLogRecordException.cs" />
+    <Compile Include="Exceptions\ObjectTypeDoesNotExistInDataModelException.cs" />
+    <Compile Include="Exceptions\ConflictingTransactionException.cs" />
+    <Compile Include="Helpers\DisposableSavingChangesListener.cs" />
+    <Compile Include="ISaveResult.cs" />
+    <Compile Include="Logging\SaveResult.cs" />
+    <Compile Include="Exceptions\FailedToRetrieveObjectException.cs" />
+    <Compile Include="Exceptions\UnableToCloneObjectException.cs" />
+    <Compile Include="Exceptions\InvalidPropertyExpressionException.cs" />
+    <Compile Include="Helpers\ObjectHelpers.cs" />
+    <Compile Include="Helpers\ReferenceEqualityComparer.cs" />
+    <Compile Include="Translation\LegacySerializationManager.cs" />
+    <Compile Include="Translation\LegacyBindManager.cs" />
+    <Compile Include="Translation\ValueTranslationManager.cs" />
+    <Compile Include="Translation\ValueTranslators\CollectionTranslator.cs" />
+    <Compile Include="Translation\ValueTranslators\BinaryBlobTranslator.cs" />
+    <Compile Include="Translation\ValueTranslators\EnumTranslator.cs" />
+    <Compile Include="Translation\ValueTranslators\DateTimeOffsetTranslator.cs" />
+    <Compile Include="Translation\ValueTranslators\IValueTranslator.cs" />
+    <Compile Include="Translation\Serializers\ISerlizer.cs" />
+    <Compile Include="Translation\Serializers\ISerializationManager.cs" />
+    <Compile Include="Translation\ValueTranslators\TimeSpanTranslator.cs" />
+    <Compile Include="Translation\ValueTranslators\DateTimeTranslator.cs" />
+    <Compile Include="Translation\ValueTranslators\GuidTranslator.cs" />
+    <Compile Include="Translation\Binders\IBindManager.cs" />
+    <Compile Include="Translation\ValueTranslators\NullableBinder.cs" />
+    <Compile Include="Translation\ValueTranslators\PrimitiveTranslator.cs" />
+    <Compile Include="Translation\Binders\IBinder.cs" />
+    <Compile Include="History\ChangeType.cs" />
+    <Compile Include="History\FilteredObjectChange.cs" />
+    <Compile Include="History\HistoryExplorerCloneStrategies.cs" />
+    <Compile Include="History\HistoryHelpers.cs" />
+    <Compile Include="History\PropertyChangeProcessor.cs" />
+    <Compile Include="Exceptions\UnableToInstantiateObjectException.cs" />
+    <Compile Include="Exceptions\UnknownPropertyInLogException.cs" />
+    <Compile Include="Logging\ChangeType.cs" />
+    <Compile Include="Logging\DeferredObjectChange.cs" />
+    <Compile Include="Logging\DeferredValue.cs" />
+    <Compile Include="Logging\ValuePairs\DataRecordValuePair.cs" />
+    <Compile Include="Logging\ValuePairs\IValuePair.cs" />
+    <Compile Include="Logging\ValuePairs\ValuePairSource.cs" />
+    <Compile Include="Transactions\ITransactionProvider.cs" />
+    <Compile Include="Transactions\NullTransactionProvider.cs" />
+    <Compile Include="Transactions\TransactionScopeProvider.cs" />
+    <None Include="AssemblyInfo.cs.template" />
+    <Compile Include="Filter\AttributeBasedLoggingFilter.cs" />
+    <Compile Include="Exceptions\ErrorInDeferredCalculation.cs" />
+    <Compile Include="Filter\BlacklistLoggingFilter.cs" />
+    <Compile Include="Filter\DoLogAttribute.cs" />
+    <Compile Include="Filter\FilterAttributeCache.cs" />
+    <Compile Include="Filter\Filters.cs" />
+    <Compile Include="Filter\ILoggingFilter.cs" />
+    <Compile Include="Filter\IFilterAttribute.cs" />
+    <Compile Include="Contexts\DbContextAdapter.cs" />
+    <Compile Include="Contexts\IHistoryContext.cs" />
+    <Compile Include="Contexts\ObjectContextAdapter.cs" />
+    <Compile Include="Filter\DoNotLogAttribute.cs" />
+    <Compile Include="Filter\ILoggingFilterProvider.cs" />
+    <Compile Include="Filter\TypeLookup.cs" />
+    <Compile Include="Filter\UnknownTypeException.cs" />
+    <Compile Include="Filter\WhitelistLoggingFilter.cs" />
+    <Compile Include="Helpers\AttributeHelpers.cs" />
+    <Compile Include="Helpers\ExpressionHelper.cs" />
+    <Compile Include="Helpers\MetadataSpaceMapper.cs" />
+    <Compile Include="History\Change.cs" />
+    <Compile Include="Exceptions\CreationDoesNotExistInLogException.cs" />
+    <Compile Include="History\HistoryExplorer.cs" />
+    <Compile Include="History\IChange.cs" />
+    <Compile Include="Models\IChangeSetFactory.cs" />
+    <Compile Include="Models\IChangeSet.cs" />
+    <Compile Include="Models\IObjectChange.cs" />
+    <Compile Include="Models\IPropertyChange.cs" />
+    <Compile Include="FrameLogModule.cs" />
+    <Compile Include="Contexts\IFrameLogContext.cs" />
+    <Compile Include="IHasLoggingReference.cs" />
+    <Compile Include="Logging\ChangeLogger.cs" />
+    <Compile Include="Logging\DeferredValueMap.cs" />
+    <Compile Include="Logging\IOven.cs" />
+    <Compile Include="Logging\Recorder.cs" />
+    <Compile Include="Logging\ValuePairs\ValuePair.cs" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
