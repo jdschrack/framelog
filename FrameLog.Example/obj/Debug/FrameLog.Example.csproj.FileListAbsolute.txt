@@ -1,0 +1,12 @@
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example\obj\Debug\FrameLog.Example.csproj.CoreCompileInputs.cache
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example\bin\Debug\FrameLog.Example.dll
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example\bin\Debug\FrameLog.Example.pdb
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example\bin\Debug\EntityFramework.dll
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example\bin\Debug\FrameLog.dll
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example\bin\Debug\FrameLog.pdb
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example\bin\Debug\EntityFramework.xml
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example\obj\Debug\FrameLog.Example.csprojResolveAssemblyReference.cache
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example\obj\Debug\FrameLog.Example.dll
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example\obj\Debug\FrameLog.Example.pdb

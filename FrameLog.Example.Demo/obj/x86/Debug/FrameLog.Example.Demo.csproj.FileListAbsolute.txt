@@ -1,0 +1,15 @@
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example.Demo\obj\x86\Debug\FrameLog.Example.Demo.csprojResolveAssemblyReference.cache
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example.Demo\obj\x86\Debug\FrameLog.Example.Demo.csproj.CoreCompileInputs.cache
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example.Demo\bin\Debug\FrameLog.Example.Demo.exe.config
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example.Demo\bin\Debug\FrameLog.Example.Demo.exe
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example.Demo\bin\Debug\FrameLog.Example.Demo.pdb
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example.Demo\bin\Debug\EntityFramework.dll
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example.Demo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example.Demo\bin\Debug\FrameLog.dll
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example.Demo\bin\Debug\FrameLog.Example.dll
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example.Demo\bin\Debug\FrameLog.Example.pdb
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example.Demo\bin\Debug\FrameLog.pdb
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example.Demo\bin\Debug\EntityFramework.xml
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example.Demo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example.Demo\obj\x86\Debug\FrameLog.Example.Demo.exe
+C:\Users\jeremey\Documents\GitHub\framelog\FrameLog.Example.Demo\obj\x86\Debug\FrameLog.Example.Demo.pdb
